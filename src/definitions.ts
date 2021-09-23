@@ -5,5 +5,6 @@ declare module '@capacitor/core' {
 }
 
 export interface ServiceCheckerPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  isGMSAvailable (): Promise<{ value: boolean }> ;
+  isHMSAvailable (): Promise<{ value: boolean }> ;
 }
