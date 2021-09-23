@@ -1,6 +1,6 @@
 {
   "name": "capacitor-plugin-gmshms-checker",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Plugin to check gms or hms availability",
   "main": "dist/plugin.js",
   "module": "dist/esm/index.js",
@@ -19,7 +19,6 @@
   "devDependencies": {
     "@capacitor/android": "^2.4.7",
     "@capacitor/core": "^2.4.7",
-    "@capacitor/ios": "^2.4.7",
     "@ionic/prettier-config": "^1.0.0",
     "@ionic/swiftlint-config": "^1.0.0",
     "@rollup/plugin-node-resolve": "^8.1.0",
@@ -35,19 +34,18 @@
   },
   "files": [
     "dist/",
-    "ios/",
     "android/",
     "CapacitorPluginGmshmsChecker.podspec"
   ],
   "keywords": [
     "capacitor",
     "plugin",
-    "native"
+    "native",
+    "hms",
+    "gms",
+    "android"
   ],
   "capacitor": {
-    "ios": {
-      "src": "ios"
-    },
     "android": {
       "src": "android"
     }
