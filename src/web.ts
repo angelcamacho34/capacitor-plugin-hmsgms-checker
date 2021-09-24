@@ -9,9 +9,12 @@ export class ServiceCheckerWeb extends WebPlugin implements ServiceCheckerPlugin
     });
   }
 
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
+
+  async isGMSAvailable(): Promise<{ value: boolean }> {
+    return {value:false};
+  }
+  async isHMSAvailable(): Promise<{ value: boolean }> {
+    return {value:false};
   }
 }
 

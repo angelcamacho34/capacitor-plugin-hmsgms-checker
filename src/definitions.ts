@@ -5,5 +5,18 @@ declare module '@capacitor/core' {
 }
 
 export interface ServiceCheckerPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  /**
+   * Platform: Android
+   * Gets true if GMS are available on the device
+   * @param none
+   * @returns object {value: boolean} - boolean indicates if GMS are available
+   */
+  isGMSAvailable(): Promise<{ value: boolean }>;
+  /**
+   * Platform: Android
+   * Gets true if HMS are available on the device
+   * @param none
+   * @returns object {value: boolean} - boolean indicates if HMS are available
+   */
+  isHMSAvailable(): Promise<{ value: boolean }>;
 }
