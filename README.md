@@ -118,7 +118,7 @@ Your Android Gradle plugin must be 3.5.4 or later
 
 - `ionic start my-cap-app --capacitor`
 - `cd my-cap-app`
-- `npm install --save @capacitor-community/firebase-analytics`
+- `npm install --save capacitor-plugin-hmsgms-checker`
 - `mkdir www && touch www/index.html`
 - `npx cap add android`
 - `npx cap sync android` (every time you run `npm install`)
