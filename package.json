@@ -1,6 +1,6 @@
 {
   "name": "capacitor-plugin-gmshms-checker",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Plugin to check gms or hms availability",
   "main": "dist/plugin.js",
   "module": "dist/esm/index.js",
