@@ -1,9 +1,3 @@
-declare module '@capacitor/core' {
-  interface PluginRegistry {
-    ServiceChecker: ServiceCheckerPlugin;
-  }
-}
-
 export interface ServiceCheckerPlugin {
   /**
    * Platform: Android
