@@ -13,10 +13,20 @@ Only Android Platform is supported.
 
 ## Installation
 
-Using npm:
+### Using npm:
+
+
+For Capacitor v2.x
 
 ```bash
-npm install capacitor-plugin-hmsgms-checker
+npm install capacitor-plugin-hmsgms-checker@0.1.1
+```
+
+
+For Capacitor v3.x
+
+```bash
+npm install capacitor-plugin-hmsgms-checker@latest
 ```
 
 Sync native files:
@@ -27,7 +37,9 @@ npx cap sync
 
 
 
-On Android, register the plugin in your main activity:
+### On Android, register the plugin in your main activity:
+
+Capacitor v2.x
 
 ```java
 import com.angelcamacho.plugin.ServiceChecker;
@@ -51,6 +63,22 @@ public class MainActivity extends BridgeActivity {
 }
 ```
 
+
+Capacitor v3.x
+
+```java
+import com.angelcamacho.plugin.ServiceChecker;
+
+public class MainActivity extends BridgeActivity {
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // Additional plugins you've installed go here
+        registerPlugin(ServiceChecker.class);
+    }
+}
+```
+
 ## Configuration
 
 In your `android/app/build.gradle` add next line in your repositories entry
@@ -62,7 +90,20 @@ repositories {
 }
 ```
 
+NOTE: If your gradle version is ^7.x, add allowInsecureProtocol flag, your build gradle should look like:
+
+```java
+repositories {
+    ...
+    maven { 
+      url 'http://developer.huawei.com/repo/'
+      allowInsecureProtocol = true
+    }
+}
+```
 ## Usage
+
+Capacitor v2.x
 
 ```typescript
 // Must import the package once to make sure the web support initializes
@@ -70,6 +111,40 @@ repositories {
 import 'capacitor-plugin-gmshms-checker';
 import { Plugins } from "@capacitor/core";
 const { ServiceChecker } = Plugins;
+
+...
+/**
+ * Platform: Android
+ * Gets true if GMS are available on the device
+ * @param none
+ * @returns object {value: boolean} - boolean indicates if GMS are available
+ */
+ServiceChecker.isGMSAvailable().then(({ value }) => {
+    // use value to do something
+    console.log(value);
+});
+/**
+ * Platform: Android
+ * Gets true if HMS are available on the device
+ * @param none
+ * @returns object {value: boolean} - boolean indicates if HMS are available
+ */
+ServiceChecker.isHMSAvailable().then(({ value }) => {
+    // use value to do something
+    console.log(value);
+});
+
+...
+
+```
+
+Capacitor v3.x
+
+```typescript
+// Must import the package once to make sure the web support initializes
+...
+import { ServiceChecker } from 'capacitor-plugin-gmshms-checker';
+import 'capacitor-plugin-gmshms-checker';
 
 ...
 /**
