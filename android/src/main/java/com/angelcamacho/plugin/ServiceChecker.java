@@ -11,10 +11,10 @@ import android.util.Log;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.huawei.hms.api.ConnectionResult;
 import com.huawei.hms.api.HuaweiApiAvailability;
+import com.getcapacitor.annotation.CapacitorPlugin;
 
-@NativePlugin
+@CapacitorPlugin(name = "ServiceChecker")
 public class ServiceChecker extends Plugin {
-
     @PluginMethod
     public void isHMSAvailable(PluginCall call) {
         boolean result = false;
@@ -29,11 +29,11 @@ public class ServiceChecker extends Plugin {
                 Log.d("CHECKER LOG", result+"");
             }
             ret.put("value", result);
-            call.success(ret);
+            call.resolve(ret);
         } catch (Exception error) {
             Log.d("CHECKER LOG", error.toString());
             ret.put("value", false);
-            call.success(ret);
+            call.resolve(ret);
         }
     }
 
@@ -50,11 +50,11 @@ public class ServiceChecker extends Plugin {
             }
             Log.d("CHECKER LOG", result+"");
             ret.put("value", result);
-            call.success(ret);
+            call.resolve(ret);
         } catch (Exception error){
             Log.d("CHECKER LOG", error.toString());
             ret.put("value", false+"");
-            call.success(ret);
+            call.resolve(ret);
         }
     }
 }
