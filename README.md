@@ -2,7 +2,7 @@
 <p align="center"><br><img src="https://user-images.githubusercontent.com/236501/85893648-1c92e880-b7a8-11ea-926d-95355b8175c7.png" width="100" height="100" /></p>
 <p align="center"><strong><code>capacitor-plugin-hmsgms-checker</code></strong></p>
 <p align="center">
-  Capacitor  plugin for checking HMS or GMS availability.</a>.
+  Capacitor  plugin for checking HMS and GMS availability.</a>
 </p>
 
 
@@ -81,7 +81,32 @@ public class MainActivity extends BridgeActivity {
 
 ## Configuration
 
-In your `android/app/build.gradle` add next line in your repositories entry
+In your `android/build.gradle` file add next lines in your `buildscript > repositories` and  `buildscript > dependencies` entries.
+
+```java
+buildscript{
+    repositories {
+        ...
+        maven { url 'https://developer.huawei.com/repo/' }
+    }
+    dependencies {
+        ...
+        classpath 'com.huawei.agconnect:agcp:1.6.0.300'
+    }
+```
+
+Then, in your `allprojects > repositories` entry add next line
+
+```java
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://developer.huawei.com/repo/' }
+    }
+}
+```
+
+In your `android/app/build.gradle` file add next line in your repositories entry
 
 ```java
 repositories {
@@ -90,7 +115,7 @@ repositories {
 }
 ```
 
-NOTE: If your gradle version is ^7.x, add allowInsecureProtocol flag, your build gradle should look like:
+WARN: If your gradle version is ^7.x, add allowInsecureProtocol flag, so your build gradle should look like:
 
 ```java
 repositories {
@@ -101,6 +126,11 @@ repositories {
     }
 }
 ```
+
+>
+> Your Android Gradle plugin must be 4.2.1 or later
+>
+
 ## Usage
 
 Capacitor v2.x
@@ -173,20 +203,16 @@ ServiceChecker.isHMSAvailable().then(({ value }) => {
 ```
 
 
-## Android/Google
+## For Google
 
-No more steps are needed. This plugin implements `play-services-base` version `17.6.0`.
+No more steps are needed. This plugin implements `play-services-base` version `18.1.0`.
 
 You may download the `google-services.json` file and copy it to `android/app/` directory of your capacitor project.
 
-## Android/Huawei
+## For Huawei
 
-No more steps are needed. This plugin implements `hms:push` version `6.1.0.300`.
+No more steps are needed. This plugin implements `hms:base` version `6.5.0.300`.
 You may download the `agconnect-services.json` file and copy it to `android/app/` directory of your capacitor project.
-
-
-
-Your Android Gradle plugin must be 3.5.4 or later
 
 
 ## Android setup
