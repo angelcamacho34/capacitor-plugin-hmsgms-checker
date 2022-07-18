@@ -1,27 +1,30 @@
 # capacitor-plugin-hmsgms-checker
+
 <p align="center"><br><img src="https://user-images.githubusercontent.com/236501/85893648-1c92e880-b7a8-11ea-926d-95355b8175c7.png" width="100" height="100" /></p>
 <p align="center"><strong><code>capacitor-plugin-hmsgms-checker</code></strong></p>
 <p align="center">
   Capacitor  plugin for checking HMS and GMS availability.</a>
 </p>
 
+<p align="center">
+<a href="https://www.npmjs.com/package/capacitor-plugin-gmshms-checker">
+ <img src="https://badge.fury.io/js/capacitor-plugin-gmshms-checker.svg" width="120"/>
+ </a>
+</p>
 
 ## Platforms Support
 
 Only Android Platform is supported.
 
-
 ## Installation
 
 ### Using npm:
-
 
 For Capacitor v2.x
 
 ```bash
 npm install capacitor-plugin-hmsgms-checker@0.1.1
 ```
-
 
 For Capacitor v3.x
 
@@ -34,8 +37,6 @@ Sync native files:
 ```bash
 npx cap sync
 ```
-
-
 
 ### On Android, register the plugin in your main activity:
 
@@ -52,7 +53,6 @@ public class MainActivity extends BridgeActivity {
     this.init(
         savedInstanceState,
         new ArrayList<Class<? extends Plugin>>() {
-
           {
             // Additional plugins you've installed go here
             add(ServiceChecker.class);
@@ -61,8 +61,8 @@ public class MainActivity extends BridgeActivity {
       );
   }
 }
-```
 
+```
 
 Capacitor v3.x
 
@@ -70,18 +70,20 @@ Capacitor v3.x
 import com.angelcamacho.plugin.ServiceChecker;
 
 public class MainActivity extends BridgeActivity {
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // Additional plugins you've installed go here
-        registerPlugin(ServiceChecker.class);
-    }
+
+  @Override
+  public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    // Additional plugins you've installed go here
+    registerPlugin(ServiceChecker.class);
+  }
 }
+
 ```
 
 ## Configuration
 
-In your `android/build.gradle` file add next lines in your `buildscript > repositories` and  `buildscript > dependencies` entries.
+In your `android/build.gradle` file add next lines in your `buildscript > repositories` and `buildscript > dependencies` entries.
 
 ```java
 buildscript{
@@ -120,16 +122,14 @@ WARN: If your gradle version is ^7.x, add allowInsecureProtocol flag, so your bu
 ```java
 repositories {
     ...
-    maven { 
+    maven {
       url 'http://developer.huawei.com/repo/'
       allowInsecureProtocol = true
     }
 }
 ```
 
->
 > Your Android Gradle plugin must be 4.2.1 or later
->
 
 ## Usage
 
@@ -202,7 +202,6 @@ ServiceChecker.isHMSAvailable().then(({ value }) => {
 
 ```
 
-
 ## For Google
 
 No more steps are needed. This plugin implements `play-services-base` version `18.1.0`.
@@ -214,7 +213,6 @@ You may download the `google-services.json` file and copy it to `android/app/` d
 No more steps are needed. This plugin implements `hms:base` version `6.5.0.300`.
 You may download the `agconnect-services.json` file and copy it to `android/app/` directory of your capacitor project.
 
-
 ## Android setup
 
 - `ionic start my-cap-app --capacitor`
@@ -224,12 +222,8 @@ You may download the `agconnect-services.json` file and copy it to `android/app/
 - `npx cap add android`
 - `npx cap sync android` (every time you run `npm install`)
 - `npx cap open android`
-- add `google-services.json` or/and `agconnect-services.json`  to your `android/app` folder
-
-
+- add `google-services.json` or/and `agconnect-services.json` to your `android/app` folder
 
 Now you should be set to go. Try to run your client using `ionic cap run android --livereload --address=0.0.0.0`.
 
 > Tip: every time you change a native code you may need to clean up the cache (Build > Clean Project | Build > Rebuild Project) and then run the app again.
-
-
