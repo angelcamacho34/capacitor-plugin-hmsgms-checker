@@ -64,7 +64,7 @@ public class MainActivity extends BridgeActivity {
 
 ```
 
-Capacitor v3.x
+Capacitor v3+
 
 ```java
 import com.angelcamacho.plugin.ServiceChecker;
