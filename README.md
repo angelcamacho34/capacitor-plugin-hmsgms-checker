@@ -20,23 +20,28 @@ Only Android Platform is supported.
 
 ### Using npm:
 
-For Capacitor v2.x
-
-```bash
-npm install capacitor-plugin-hmsgms-checker@0.1.1
-```
-
-For Capacitor v3.x
 
 ```bash
 npm install capacitor-plugin-hmsgms-checker@latest
 ```
+
 
 Sync native files:
 
 ```bash
 npx cap sync
 ```
+
+## Version Compatibility
+
+| Capacitor Version | Plugin Version | Install Command |
+| --- | --- | --- |
+| Capacitor V2 | 1.0.0 | ```npm i capacitor-plugin-gmshms-checker@1``` |
+| Capacitor V3 | 2.0.0 | ```npm i capacitor-plugin-gmshms-checker@2.0.0``` |
+| Capacitor V4 | 2.1.0 | ```npm i capacitor-plugin-gmshms-checker@2.1.0``` |
+| Capacitor V5 | 3.0.0 | ```npm i capacitor-plugin-gmshms-checker@3``` |
+||||
+
 
 ### On Android, register the plugin in your main activity:
 
@@ -93,7 +98,7 @@ buildscript{
     }
     dependencies {
         ...
-        classpath 'com.huawei.agconnect:agcp:1.6.0.300'
+        classpath 'com.huawei.agconnect:agcp:1.9.0.300'
     }
 ```
 
@@ -168,7 +173,7 @@ ServiceChecker.isHMSAvailable().then(({ value }) => {
 
 ```
 
-Capacitor v3.x
+Capacitor v3+
 
 ```typescript
 // Must import the package once to make sure the web support initializes
