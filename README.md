@@ -33,6 +33,7 @@ npx cap sync
 ```
 
 ## Version Compatibility
+On capacitor v6 migration no breaking changes are reported, but major number version jump to 6 to enhance readability of plugin-capacitor compatibility.
 
 | Capacitor Version | Plugin Version | Install Command |
 | --- | --- | --- |
@@ -40,6 +41,7 @@ npx cap sync
 | Capacitor V3 | 2.0.0 | ```npm i capacitor-plugin-gmshms-checker@2.0.0``` |
 | Capacitor V4 | 2.1.0 | ```npm i capacitor-plugin-gmshms-checker@2.1.0``` |
 | Capacitor V5 | 3.0.0 | ```npm i capacitor-plugin-gmshms-checker@3``` |
+| Capacitor V6 | 6.0.0 | ```npm i capacitor-plugin-gmshms-checker@latest``` |
 ||||
 
 
@@ -85,6 +87,24 @@ public class MainActivity extends BridgeActivity {
 }
 
 ```
+
+Capacitor v4+
+
+```java
+import com.angelcamacho.plugin.ServiceChecker;
+
+public class MainActivity extends BridgeActivity {
+
+  @Override
+  public void onCreate(Bundle savedInstanceState) {
+    // Additional plugins you've installed go here, diffent order compared with capV3
+    registerPlugin(ServiceChecker.class);
+    super.onCreate(savedInstanceState);
+  }
+}
+
+```
+
 
 ## Configuration
 
