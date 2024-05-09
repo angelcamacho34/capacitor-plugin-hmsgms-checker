@@ -33,7 +33,7 @@ npx cap sync
 ```
 
 ## Version Compatibility
-On capacitor v6 migration no breaking changes are reported, but major number version jump to 6 to enhance readability of plugin-capacitor compatibility.
+On capacitor v6 migration, no breaking changes are reported, but major number version jump to 6 to better understanding of this plugin-capacitor compatibility.
 
 | Capacitor Version | Plugin Version | Install Command |
 | --- | --- | --- |
