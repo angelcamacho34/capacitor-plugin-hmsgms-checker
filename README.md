@@ -41,7 +41,8 @@ On capacitor v6 migration, no breaking changes are reported, but major number ve
 | Capacitor V3 | 2.0.0 | ```npm i capacitor-plugin-gmshms-checker@2.0.0``` |
 | Capacitor V4 | 2.1.0 | ```npm i capacitor-plugin-gmshms-checker@2.1.0``` |
 | Capacitor V5 | 3.0.0 | ```npm i capacitor-plugin-gmshms-checker@3``` |
-| Capacitor V6 | 6.0.0 | ```npm i capacitor-plugin-gmshms-checker@latest``` |
+| Capacitor V6 | 6.0.0 | ```npm i capacitor-plugin-gmshms-checker@6``` |
+| Capacitor V7 | 7.0.0 | ```npm i capacitor-plugin-gmshms-checker@latest``` |
 ||||
 
 
@@ -71,7 +72,7 @@ public class MainActivity extends BridgeActivity {
 
 ```
 
-Capacitor v3+
+Capacitor v3.x
 
 ```java
 import com.angelcamacho.plugin.ServiceChecker;
